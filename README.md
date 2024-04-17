@@ -25,3 +25,4 @@ python main.py
 
 ## Supported APIs
 - [Google Maps](https://developers.google.com/maps/documentation)
+- [Apple Maps](https://developer.apple.com/documentation/applemapsserverapi/)

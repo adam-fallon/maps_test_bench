@@ -1,23 +1,16 @@
-import googlemaps
-from datetime import datetime
 import os
-
 from dotenv import load_dotenv
+from google import GoogleMaps
+from apple import AppleMaps
 
 load_dotenv()
 GOOGLE_MAPS_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
+APPLE_MAPS_API_KEY = os.getenv("APPLE_MAPS_API_KEY")
 
-gmaps = googlemaps.Client(key=f"{GOOGLE_MAPS_KEY}")
+google = GoogleMaps(GOOGLE_MAPS_KEY)
+apple = AppleMaps(APPLE_MAPS_API_KEY)
 
-lat_long = gmaps.geocode("1600 Amphitheatre Parkway, Mountain View, CA")
 
-now = datetime.now()
-
-places = gmaps.places_nearby(
-    location=lat_long[0]["geometry"]["location"],
-    radius=1000,
-    open_now=True,
-    type="restaurant",
-)
-
-print(places)
+if __name__ == "__main__":
+    apple.apple_get_places("37.7749", "-122.4194", "restaurant", "FoodMarket")
+    google.google_nearby_places("London Paddington")
