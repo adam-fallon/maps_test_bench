@@ -12,5 +12,7 @@ apple = AppleMaps(APPLE_MAPS_API_KEY)
 
 
 if __name__ == "__main__":
+    # https://developer.apple.com/documentation/applemapsserverapi/
     apple.apple_get_places("37.7749", "-122.4194", "restaurant", "FoodMarket")
+    # https://developers.google.com/maps/documentation
     google.google_nearby_places("London Paddington")
